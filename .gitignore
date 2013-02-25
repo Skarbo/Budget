@@ -1,3 +1,7 @@
+### KrisSkarboApi
+dbbackup/*/_dev.sql
+dbbackup/*/_prod.sql
+
 #################
 ## Eclipse
 #################
