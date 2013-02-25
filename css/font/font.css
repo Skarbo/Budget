@@ -1,0 +1,62 @@
+/* Fonts */
+@font-face {
+	font-family: 'Budget';
+	src: url('../font/budget.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*[data-icon=pie]:AFTER {
+	font-family: Budget;
+	content: "P";
+}
+
+*[data-icon=settings]:AFTER {
+	font-family: Budget;
+	content: "S";
+}
+
+*[data-icon=filter]:AFTER {
+	font-family: Budget;
+	content: "F";
+}
+
+*[data-icon=edit]:AFTER {
+	font-family: Budget;
+	content: "E";
+}
+
+*[data-icon=calendar]:AFTER {
+	font-family: Budget;
+	content: "C";
+}
+
+*[data-icon=card]:AFTER {
+	font-family: Budget;
+	content: "A";
+}
+
+*[data-icon=shop]:AFTER {
+	font-family: Budget;
+	content: "B";
+}
+
+*[data-icon=comment]:AFTER {
+	font-family: Budget;
+	content: "D";
+}
+
+*[data-icon=dollar]:AFTER {
+	font-family: Budget;
+	content: "$";
+}
+
+*[data-icon=login]:AFTER {
+	font-family: Budget;
+	content: "L";
+}
+
+*[data-icon=logout]:AFTER {
+	font-family: Budget;
+	content: "M";
+}

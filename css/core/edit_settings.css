@@ -1,0 +1,54 @@
+.edit_settings_wrapper {
+	border: 1px solid #434343;
+	border-radius: 0.2em;
+	display: inline-table;
+	width: 100%;
+	border-radius: 0.2em;
+	display: table;
+}
+
+.edit_settings_wrapper>.setting_wrapper {
+	display: table-row;
+}
+
+.edit_settings_wrapper>.setting_wrapper.template {
+	display: none;
+}
+
+.edit_settings_wrapper>.setting_wrapper>* {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.4em;
+	padding: 0.2em;
+	border-top: 1px solid #CCC;
+}
+
+.edit_settings_wrapper>.setting_wrapper:FIRST-CHILD>* {
+	border-top: 0;
+}
+
+.edit_settings_wrapper>.setting_wrapper:nth-child(even) {
+	background-color: #F0F0F0;
+}
+
+.edit_settings_wrapper>.setting_wrapper>*:nth-child(1),.edit_settings_wrapper>.setting_wrapper>*:nth-child(3)
+	{
+	width: 1px;
+	padding: 0 0.5em;
+}
+
+.edit_settings_wrapper>.setting_wrapper .button {
+	cursor: pointer;
+}
+
+.edit_settings_wrapper>.setting_wrapper .button.touching {
+	color: #CCC;
+}
+
+.edit_settings_wrapper>.setting_wrapper>.field_wrapper {
+	
+}
+
+.edit_settings_wrapper>.setting_wrapper>.field_wrapper .table>*+*>* {
+	margin-left: 0.5em;
+}

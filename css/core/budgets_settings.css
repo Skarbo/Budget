@@ -1,0 +1,142 @@
+/* Budgets settings */
+#budgets_settings {
+	
+}
+
+#budgets_settings .button {
+	cursor: pointer;
+	padding: 0 0.5em !important;
+	width: 1px;
+}
+
+/* ... Edit */
+#budgets_settings #budgets_edit .budgets_budget_row {
+	
+}
+
+#budgets_settings #budgets_edit .budgets_budget_row.template {
+	display: none;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_wrapper {
+	border: 1px solid #434343;
+	border-radius: 0.2em;
+	display: table;
+	width: 100%;
+	font-size: 1.4em;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_wrapper>* {
+	display: table-row;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_wrapper>* {
+	display: table-row;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_wrapper>*:nth-child(even)
+	{
+	background-color: #F0F0F0;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_wrapper>*>* {
+	display: table-cell;
+	padding: 0.2em;
+	vertical-align: middle;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_row .budget_select {
+	width: 1px;
+	padding: 0 0.5em;
+	cursor: pointer;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_row .budget_select span
+	{
+	
+}
+
+#budgets_settings #budgets_edit .budgets_budget_row .budget_select span img
+	{
+	height: 16px;
+	weight: 16px;
+	background-color: #d1e0e3;
+	border-radius: 8px;
+}
+
+#budgets_settings #budgets_edit .budgets_budget_row.selected .budget_select span img
+	{
+	background-color: #6d9eeb;
+}
+
+/* ... /Edit */
+
+/* ... Users */
+#budgets_settings #budgets_users {
+	margin-top: 0.5em;
+}
+
+#budgets_settings #budgets_users h1 {
+	font-size: 1.5em;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper {
+	border: 1px solid #434343;
+	border-radius: 0.2em;
+	width: 100%;
+	font-size: 1.4em;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper tr:nth-child(even)
+	{
+	background-color: #F0F0F0;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper td {
+	padding: 0.2em;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+/* ... ... Show */
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_show_row.template
+	{
+	display: none;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_show_row .budgets_user_email
+	{
+	
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_show_row .budgets_user_name
+	{
+	width: 30%;
+	font-size: 0.8em;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_show_row .budgets_user_loggedin
+	{
+	width: 10%;
+	text-align: right;
+	font-size: 0.8em;
+}
+
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_show_row .budgets_user_delete
+	{
+	width: 1px;
+}
+
+/* ... ... /Show */
+
+/* ... ... Add */
+#budgets_settings #budgets_users .budgets_user_wrapper .budgets_user_add_row .budgets_user_add
+	{
+	width: 1px;
+}
+
+/* ... ... /Add */
+
+/* ... /Users */
+
+/* /Budgets settings */

@@ -1,0 +1,196 @@
+/* Calendar */
+.calendar_wrapper {
+	
+}
+
+.calendar_wrapper .calendar_date {
+	display: none;
+}
+
+/* ... Header */
+.calendar_wrapper .calendar_header {
+	display: table;
+	width: 100%;
+}
+
+.calendar_wrapper .calendar_header>* {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.5em;
+}
+
+/* ... ... Month */
+.calendar_wrapper .calendar_header .calendar_month_prev,.calendar_wrapper .calendar_header .calendar_month_next
+	{
+	width: 1px;
+	padding: 0.2em 0.8em;
+	cursor: pointer;
+}
+
+.calendar_wrapper .calendar_header .calendar_month_prev.touching,.calendar_wrapper .calendar_header .calendar_month_next.touching
+	{
+	color: #CCC;
+}
+
+.calendar_wrapper .calendar_header .calendar_month_prev {
+	text-align: left;
+}
+
+.calendar_wrapper .calendar_header .calendar_month_next {
+	text-align: right;
+}
+
+/* ... ... /Month */
+.calendar_wrapper .calendar_header .calendar_monthyear {
+	text-align: center;
+	font-weight: bold;
+	padding: 0.2em 0;
+}
+
+.calendar_wrapper .calendar_header .calendar_monthyear>* {
+	display: inline;
+}
+
+.calendar_wrapper .calendar_header .calendar_monthyear .month {
+	margin-right: 0.2em;
+}
+
+.calendar_wrapper .calendar_header .calendar_monthyear .year {
+	
+}
+
+/* ... /Header */
+
+/* ... Calendar */
+.calendar_wrapper .calendar {
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+/* ... ... Weekdays */
+.calendar_wrapper .calendar .calendar_weekdays_wrapper {
+	display: table-row;
+	background-color: #F0F0F0;
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday
+	{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 0.8em;
+	border: 1px solid #E0E0E0;
+	border-width: 1px 1px 0 0;
+	width: 14.28%;
+	padding: 0.2em 0;
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday:FIRST-CHILD
+	{
+	border-width: 1px 1px 0 1px;
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="1"]:AFTER
+	{
+	content: "Mon";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="2"]:AFTER
+	{
+	content: "Tue";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="3"]:AFTER
+	{
+	content: "Wed";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="4"]:AFTER
+	{
+	content: "Thu";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="5"]:AFTER
+	{
+	content: "Fri";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="6"]:AFTER
+	{
+	content: "Sat";
+}
+
+.calendar_wrapper .calendar .calendar_weekdays_wrapper .calendar_weekday[data-calendar-weekday="7"]:AFTER
+	{
+	content: "Sun";
+}
+
+/* ... ... /Weekdays */
+
+/* ... ... Weeks */
+.calendar_wrapper .calendar .calendar_weeks_wrapper {
+	display: table-row-group;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper
+	{
+	display: table-row;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper:nth-child(even)
+	{
+	background-color: #F0F0F0;
+}
+
+/* ... ... ... Day */
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day
+	{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2em;
+	padding: 0.5em 0;
+	border: 1px solid #E0E0E0;
+	border-width: 1px 1px 0 0;
+	cursor: pointer;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day.touching:NOT([data-calendar-date=""])
+{
+	background-color: #F0F0F0;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper:nth-child(even) .calendar_day.touching:NOT([data-calendar-date=""])
+{
+	background-color: #FFF;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day[data-calendar-date=""]
+	{
+	cursor: inherit;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day.selected
+	{
+	background-color: #CCD8FF;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day:FIRST-CHILD
+	{
+	border-width: 1px 1px 0 1px;
+}
+
+.calendar_wrapper .calendar .calendar_weeks_wrapper .calendar_week_wrapper .calendar_day[data-calendar-weekday="7"]
+	{
+	color: #4D0000;
+}
+
+/* ... ... ... /Day */
+
+/* ... ... /Weeks */
+
+/* ... /Calendar */
+
+/* /Calendar */

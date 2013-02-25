@@ -1,0 +1,79 @@
+27-04-2012 13:22
+Could not include class "DefaultLocale" (C:\Dropbox\Scripting\KrisSkarbo\Budget2\src\locale\default_locale.php) called from : C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(11): InitializeUtil::getClassPathFile('DefaultLocale', 'C:\Dropbox\Scri...')
+#1 [internal function]: __autoload('DefaultLocale')
+#2 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\locale\locale.php(77): class_exists('DefaultLocale')
+#3 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(326): Locale::instance()
+#4 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(79): Api->doDatabaseAndLocaleSetup(2)
+#5 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(24): Api->__construct(2)
+#6 {main}
+
+27-04-2012 13:22
+Could not include class "DefaultLocale" (C:\Dropbox\Scripting\KrisSkarbo\Budget2\src\locale\default_locale.php) called from : C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(11): InitializeUtil::getClassPathFile('DefaultLocale', 'C:\Dropbox\Scri...')
+#1 [internal function]: __autoload('DefaultLocale')
+#2 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\locale\locale.php(77): class_exists('DefaultLocale')
+#3 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(326): Locale::instance()
+#4 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(79): Api->doDatabaseAndLocaleSetup(2)
+#5 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(24): Api->__construct(2)
+#6 {main}
+
+29-04-2012 21:50
+Could not include class "DefaultLocale" (C:\Dropbox\Scripting\KrisSkarbo\Budget2\src\locale\default_locale.php) called from : C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(11): InitializeUtil::getClassPathFile('DefaultLocale', 'C:\Dropbox\Scri...')
+#1 [internal function]: __autoload('DefaultLocale')
+#2 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\locale\locale.php(77): class_exists('DefaultLocale')
+#3 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(326): Locale::instance()
+#4 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(79): Api->doDatabaseAndLocaleSetup(2)
+#5 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(24): Api->__construct(2)
+#6 {main}
+
+29-04-2012 21:59
+Could not include class "DefaultLocale" (C:\Dropbox\Scripting\KrisSkarbo\Budget2\src\locale\default_locale.php) called from : C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(11): InitializeUtil::getClassPathFile('DefaultLocale', 'C:\Dropbox\Scri...')
+#1 [internal function]: __autoload('DefaultLocale')
+#2 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\locale\locale.php(77): class_exists('DefaultLocale')
+#3 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(326): Locale::instance()
+#4 C:\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api.php(79): Api->doDatabaseAndLocaleSetup(2)
+#5 C:\Dropbox\Scripting\KrisSkarbo\Budget2\index.php(24): Api->__construct(2)
+#6 {main}
+
+03-01-2013 22:34
+Could not include class "EntryRestView" (C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\src\view\rest\entry_rest_view.php) called from C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php:34 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php(12): InitializeUtil::getClassPathFile('EntryRestView', 'C:\Users\Kris L...')
+#1 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php(34): __autoload('EntryRestView')
+#2 {main}
+
+03-01-2013 23:03
+Could not include class "CardRestView" (C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\src\view\rest\card_rest_view.php) called from C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php:36 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php(12): InitializeUtil::getClassPathFile('CardRestView', 'C:\Users\Kris L...')
+#1 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php(36): __autoload('CardRestView')
+#2 {main}
+
+10-01-2013 17:29
+SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\db\pdo_db_api.php:154
+#0 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\db\pdo_db_api.php(77): PdoDbApi->querySelect(Object(SelectQueryDbCore))
+#1 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\dao\db\debug_db_dao.php(97): PdoDbApi->query(Object(SelectQueryDbCore))
+#2 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\handler\debug_handler.php(37): DebugDbDao->getNextSession()
+#3 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\api\api\abstract_api.php(294): DebugHandler->__construct(Object(DebugDbDao), 3)
+#4 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget2\api_rest.php(29): AbstractApi->setDebug(Array)
+#5 {main}
+SELECT debug_session AS session FROM budget_debug ORDER BY debug_session DESC LIMIT 1
+Array
+(
+)
+
+15-01-2013 15:09
+Could not include class "LoginInterface" (C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\src\interface\login_interface.php) called from C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\src\controller\main\login_main_controller.php:4 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\index.php(12): InitializeUtil::getClassPathFile('LoginInterface', 'C:\Users\Kris L...')
+#1 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\src\controller\main\login_main_controller.php(4): __autoload('LoginInterface')
+#2 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\index.php(13): require_once('C:\Users\Kris L...')
+#3 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\index.php(35): __autoload('LoginMainContro...')
+#4 {main}
+
+18-01-2013 11:40
+Could not include class "BudgetsRestView" (C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\src\view\rest\budgets_rest_view.php) called from C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\api_rest.php:43 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\KrisSkarboApi\src\util\initialize_util.php:66
+#0 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\api_rest.php(12): InitializeUtil::getClassPathFile('BudgetsRestView', 'C:\Users\Kris L...')
+#1 C:\Users\Kris Laptop Win\Dropbox\Scripting\KrisSkarbo\Budget\api_rest.php(43): __autoload('BudgetsRestView')
+#2 {main}
+

@@ -1,0 +1,122 @@
+/* Select */
+.select_wrapper {
+	border: 1px solid #434343;
+	border-radius: 0.2em;
+	display: inline-table;
+	width: 100%;
+}
+
+.select_wrapper>* {
+	display: table-row-group;
+}
+
+.select_wrapper>*>* {
+	display: table-row;
+}
+
+.select_wrapper>*>*>* {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.select_wrapper>*>*>*:FIRST-CHILD {
+	width: 1px;
+}
+
+.select_wrapper input[type="radio"] {
+	display: none;
+}
+
+.select_wrapper .select_template {
+	display: none;
+}
+
+/* ... Container */
+.select_wrapper .select_container {
+	
+}
+
+.select_wrapper .select_container .select_select:FIRST-CHILD>* {
+	border-top: 0;
+}
+
+/* ... /Container */
+
+/* ... Select */
+.select_wrapper .select_select {
+	cursor: pointer;
+	font-size: 1.4em;
+}
+
+.select_wrapper .select_select:nth-child(even) {
+	background-color: #F0F0F0;
+}
+
+.select_wrapper .select_select.touching {
+	background-color: #F0F0F0;
+}
+
+.select_wrapper .select_select.touching:nth-child(even) {
+	background-color: #FFF;
+}
+
+.select_wrapper .select_select span+span {
+	float: right;
+	margin-left: 0.5em;
+	font-size: 0.6em;
+	opacity: 0.7;
+	margin-top: 0.2em;
+}
+
+.select_wrapper .select_select span+span:BEFORE {
+	content: "(";
+}
+
+.select_wrapper .select_select span+span:AFTER {
+	content: ")";
+}
+
+.select_wrapper .select_select>* {
+	border-top: 1px solid #CCC;
+}
+
+.select_wrapper .select_select.selected {
+	background-color: #E5EBFF;
+}
+
+.select_wrapper .select_select .select_radio {
+	padding: 0 0.5em;
+}
+
+.select_wrapper .select_select .select_radio img {
+	height: 16px;
+	weight: 16px;
+	background-color: #d1e0e3;
+	border-radius: 8px;
+}
+
+.select_wrapper .select_select.selected .select_radio img {
+	background-color: #6d9eeb;
+}
+
+.select_wrapper .select_select .select_for {
+	padding: 0.2em;
+}
+
+/* ... /Select */
+
+/* ... New */
+.select_wrapper .select_new .select_select .select_for>* {
+	/*background-color: #DDD;
+	padding: 0 0.2em;*/
+}
+
+.select_wrapper .select_new .select_select input[type=text] {
+	/*background-color: transparent;
+	font-size: 1em;
+	width: 100%;*/
+}
+
+/* ... /New */
+
+/* /Select */

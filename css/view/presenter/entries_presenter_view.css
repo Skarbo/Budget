@@ -1,0 +1,262 @@
+.entries_wrapper {
+	
+}
+
+.entries_wrapper table.entries {
+	width: 100%;
+}
+
+.entries_wrapper table.entries tbody.template {
+	display: none;
+}
+
+.entries_wrapper table.entries tbody td {
+	padding: 0.2em 0.2em;
+}
+
+/* Month */
+.entries_wrapper table.entries tbody.month {
+	background-color: #CFE2F3;
+	cursor: pointer;
+}
+
+.entries_wrapper table.entries tbody.month>tr>td {
+	border-top: 2px solid #666;
+	/* no_select */
+}
+
+.entries_wrapper table.entries tbody.month:FIRST-CHILD>tr>td {
+	border-top: 0;
+}
+
+/* ... Month year */
+.entries_wrapper table.entries tbody.month td.monthyear {
+	width: 1.8em;
+	font-size: 0.8em;
+	padding-right: 0.2em;
+}
+
+.entries_wrapper table.entries tbody.month td.monthyear .month {
+	border-bottom: 2px solid #76a5af;
+	text-align: left;
+	/* no_select */
+}
+
+.entries_wrapper table.entries tbody.month td.monthyear .year {
+	text-align: right;
+}
+
+/* ... /Month year */
+
+/* ... Month */
+.entries_wrapper table.entries tbody.month td.month {
+	
+}
+
+.entries_wrapper table.entries tbody.month td.month .month {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding-right: 0.2em;
+	line-height: 2em;
+}
+
+.entries_wrapper table.entries tbody.month td.month .entries_wrapper {
+	background-color: transparent;
+	border: 2px solid #98BAF1;
+	border-radius: 10px;
+	display: inline-table;
+	height: 15px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 15px;
+}
+
+.entries_wrapper table.entries tbody.month td.month .entries_wrapper .entries
+	{
+	display: table-cell;
+	font-size: 0.6em;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+/* ... /Month */
+
+/* ... Cost sum */
+.entries_wrapper table.entries tbody.month td.cost_sum {
+	font-weight: bold;
+	font-size: 1.4em;
+	text-align: right;
+	width: 1px;
+}
+
+.entries_wrapper table.entries tbody.month td.cost_sum[data-positive="true"]
+	{
+	color: #006600;
+}
+
+.entries_wrapper table.entries tbody.month td.cost_sum:BEFORE {
+	content: "kr";
+	margin-right: 0.2em;
+	font-size: 0.6em;
+	font-weight: normal;
+}
+
+/* ... /Cost sum */
+
+/* /Month */
+
+/* Month entries */
+.entries_wrapper table.entries tbody.month_entries>tr>td {
+	border-top: 1px solid #666;
+}
+
+/* ... Entry */
+.entries_wrapper table.entries tbody.month_entries>tr.entry {
+	display: none;
+	cursor: pointer;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry:nth-child(even)
+	{
+	background-color: #EFEFEF;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry.selected {
+	background-color: #E5EBFF;
+}
+
+.entries_wrapper table.entries tbody.month.selected+tbody.month_entries>tr.entry
+	{
+	display: table-row;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.date {
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3em;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment
+	{
+	
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment table
+	{
+	font-size: 0.8em;
+	width: 100%;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment td.type
+	{
+	
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment td.card
+	{
+	color: #144f5d;
+	text-align: right;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment td.card span
+	{
+	display: none;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry.selected>td.type_card_comment td.card span
+	{
+	display: inline;
+	font-size: 0.8em;
+	margin-right: 0.5em;
+	color: inherit;
+	color: #424345;
+	opacity: 0.7;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment td.card:AFTER
+	{
+	background: url("../svg.php?svg=persons&color=gray") no-repeat scroll
+		50% 50% transparent;
+	color: transparent;
+	content: "_";
+	float: right;
+	margin-left: 0.3em;
+	vertical-align: middle;
+	font-size: 0.8em;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry[data-single="true"]>td.type_card_comment td.card:AFTER
+	{
+	background-image: url("../svg.php?svg=person&color=gray");
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry>td.type_card_comment td.comment
+	{
+	font-size: 0.8em;
+	color: #666;
+	vertical-align: top;
+	padding-top: 0;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry td.cost {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: right;
+	width: 1px;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry[data-positive="true"] td.cost
+	{
+	color: #006600;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry td.cost:BEFORE
+	{
+	content: "kr";
+	margin-right: 0.2em;
+	font-size: 0.6em;
+	font-weight: normal;
+}
+
+/* ... /Entry */
+
+/* ... Entry Loading */
+.entries_wrapper table.entries tbody.month_entries>tr.entry_loading {
+	display: none;
+}
+
+.entries_wrapper table.entries tbody.month.selected+tbody.month_entries>tr.entry_loading
+	{
+	display: table-row;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry_loading>td {
+	text-align: center;
+	border-top: 1px solid #666;
+}
+
+/* ... /Entry Loading */
+
+/* ... Entry None */
+.entries_wrapper table.entries tbody.month_entries>tr.entry_none {
+	display: none;
+}
+
+.entries_wrapper table.entries tbody.month.selected[data-entries="0"]+tbody.month_entries>tr.entry_none
+	{
+	display: table-row;
+}
+
+.entries_wrapper table.entries tbody.month_entries>tr.entry_none>td {
+	text-align: center;
+	font-size: 0.8em;
+	color: #777777;
+	border-top: 1px solid #666;
+}
+/* ... /Entry None */
+
+/* /Month entries */

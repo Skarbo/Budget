@@ -1,0 +1,219 @@
+/* Cost */
+.cost_wrapper {
+	display: inline-block;
+}
+
+/* ... Number */
+.cost_wrapper .cost_number_wrapper {
+	padding: 0.2em 0.5em;
+	border: 2px solid #4e4e4e;
+	border-width: 2px 2px 0 2px;
+}
+
+.cost_wrapper .cost_number_wrapper.selected {
+	box-shadow: inset 0 0 10px #46818F;
+}
+
+.cost_wrapper .cost_number_wrapper .cost_number_temp {
+	text-align: right;
+	font-size: 0.8em;
+	color: #666;
+}
+
+.cost_wrapper .cost_number_wrapper .cost_number_sum {
+	display: none;
+}
+
+.cost_wrapper .cost_number_wrapper input.cost_number_input {
+	text-align: right;
+	font-size: 2em;
+	width: 100%;
+}
+
+/* ... /Number */
+
+/* ... Calculator */
+.cost_wrapper .cost_calculator_wrapper {
+	display: table;
+	width: 100%;
+	border-bottom: 2px solid #4e4e4e;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper {
+	display: table-row;
+}
+
+/* ... ... Key */
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper>* {
+	display: table-cell;
+	text-align: center;
+	color: #F0F0F0;
+	border: 2px solid #4e4e4e;
+	border-width: 2px 2px 0 0;
+	vertical-align: middle;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper>*:nth-child(-n+3)
+	{
+	width: 26.66%
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper>*:nth-child(4)
+	{
+	width: 20%;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper>*:FIRST-CHILD
+	{
+	border-width: 2px 2px 0 2px;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function,.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method
+	{
+	background-color: #666;
+	padding: 0.5em;
+	font-weight: bold;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function.touching,.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method.touching
+	{
+	background-color: #777;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method input
+	{
+	display: none;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number
+	{
+	background-color: #46818f;
+	font-size: 2.5em;
+	font-weight: bold;
+	padding: 0.2em 0.5em;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number.touching
+	{
+	background-color: #7DB2BF;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="credit"]:AFTER
+	{
+	content: "Debit";
+	color: #FFE5E5;
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="credit"][data-credit="credit"]:AFTER
+	{
+	content: "Credit";
+	color: #CCFFCC
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="single"]:AFTER
+	{
+	content: "Divide";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="single"][data-single="single"]:AFTER
+	{
+	content: "Single";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="back"]:AFTER
+	{
+	content: "Back";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .method[data-cost-method="clear"]:AFTER
+	{
+	content: "Clear";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function[data-cost-function="divide"]:AFTER
+	{
+	content: "/";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function[data-cost-function="multiply"]:AFTER
+	{
+	content: "X";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function[data-cost-function="substract"]:AFTER
+	{
+	content: "-";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function[data-cost-function="addition"]:AFTER
+	{
+	content: "+";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .function[data-cost-function="equal"]:AFTER
+	{
+	content: "=";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="period"]:AFTER
+	{
+	content: ".";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="0"]:AFTER
+	{
+	content: "0";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="1"]:AFTER
+	{
+	content: "1";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="2"]:AFTER
+	{
+	content: "2";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="3"]:AFTER
+	{
+	content: "3";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="4"]:AFTER
+	{
+	content: "4";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="5"]:AFTER
+	{
+	content: "5";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="6"]:AFTER
+	{
+	content: "6";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="7"]:AFTER
+	{
+	content: "7";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="8"]:AFTER
+	{
+	content: "8";
+}
+
+.cost_wrapper .cost_calculator_wrapper .cost_calculator_row_wrapper .number[data-cost-number="9"]:AFTER
+	{
+	content: "9";
+}
+
+/* ... ... /Key */
+
+/* ... /Calculator */
+
+/* /Cost */
