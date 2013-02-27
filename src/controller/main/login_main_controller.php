@@ -190,7 +190,7 @@ class LoginMainController extends MainController implements LoginInterface
         elseif ( $this->isPageLogout() )
         {
             $this->getLoginHandler()->doLogout();
-            self::redirect( Resource::url()->login()->getLoginPage() );
+            return self::redirect( Resource::url()->login()->getLoginPage( $this->getMode( true ) ) );
         }
     }
 

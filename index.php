@@ -18,11 +18,8 @@ function __autoload( $class_name )
     }
 }
 
-// Generate mode
-$mode = isset( $_GET[ "mode" ] ) && in_array( $_GET[ "mode" ], BudgetApi::$MODES ) ? $_GET[ "mode" ] : BudgetApi::MODE_DEV;
-
 // Initiate BudgetApi
-$api = new BudgetApi( $mode );
+$api = new BudgetApi( BudgetApi::MODE_DEV );
 
 // Set Debug handler
 $api->setDebug(

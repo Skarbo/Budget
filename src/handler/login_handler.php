@@ -241,7 +241,7 @@ class LoginHandler extends Handler
     {
         $this->user = UserModel::get_( $this->daoContainer->getUserDao()->get( $userId ) );
 
-        if ( $userId )
+        if ( $this->user && $userId )
         {
             $this->daoContainer->getUserDao()->setLoggedin( $this->user->getId() );
             $_SESSION[ self::$SESSION_LOGGEDIN ] = $this->user->getId();

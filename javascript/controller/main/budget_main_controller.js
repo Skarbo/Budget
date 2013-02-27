@@ -101,14 +101,6 @@ BudgetMainController.prototype.doBindEventHandler = function() {
 	});
 
 	// Handle "Save Entry" event
-	this.getEventHandler().registerListener(SaveEntryBudgetEvent.TYPE,
-	/**
-	 * @param {SaveEntryBudgetEvent}
-	 *            event
-	 */
-	function(event) {
-		context.handleEntrySave(event.getEntry(), event.getEntryId());
-	});
 	this.getEventHandler().registerListener(SaveEvent.TYPE,
 	/**
 	 * @param {SaveEvent}
@@ -116,6 +108,10 @@ BudgetMainController.prototype.doBindEventHandler = function() {
 	 */
 	function(event) {
 		switch (event.getSaveType()) {
+		case "entry":
+			context.handleEntrySave(event.getObject(), event.getObjectId(), event.getCallback());
+			break;
+
 		case "card":
 			context.handleCardSave(event.getObject(), event.getObjectId(), event.getCallback());
 			break;
@@ -123,11 +119,11 @@ BudgetMainController.prototype.doBindEventHandler = function() {
 		case "type":
 			context.handleTypeSave(event.getObject(), event.getObjectId(), event.getCallback());
 			break;
-			
+
 		case "budget":
 			context.handleBudgetSave(event.getObject(), event.getObjectId(), event.getCallback());
 			break;
-			
+
 		case "budget_user":
 			context.handleBudgetUserSave(event.getObject(), event.getObjectId(), event.getCallback());
 			break;
@@ -191,7 +187,7 @@ BudgetMainController.prototype.handleRequest = function(isInit) {
 
 	// Budget
 	if (!isInit && this.isBudget()) {
-		this.getBudgetHandler().doRetrieveBudget(this.query.budget, function(){
+		this.getBudgetHandler().doRetrieveBudget(this.query.budget, function() {
 			context.getEventHandler().handle(new ToastEvent("Changed Budget"));
 		});
 	}
@@ -242,33 +238,45 @@ BudgetMainController.prototype.handleOverlay = function(overlay, query) {
 	}
 };
 
-BudgetMainController.prototype.handleEntrySave = function(entry, entryId) {
+BudgetMainController.prototype.handleEntrySave = function(entry, entryId, callback) {
 	var context = this;
 	var budgetId = this.getBudgetHandler().getBudgetId();
-	
+
 	// Retrieve months
 	var retrieveMonths = function(entry) {
-		// Retrieve months
 		context.getBudgetHandler().doRetrieveBudget(budgetId, function() {
-			// Entry retrieved
 			context.getEventHandler().handle(new RetrievedEvent("entry", entry));
 		});
 	};
 
-	// Edit
-	if (entryId) {
-		this.getEventHandler().handle(new ToastEvent("Editing Entry"));
-		this.getBudgetHandler().getEntryDao().edit(entryId, entry, function(single, list) {
-			context.getEventHandler().handle(new ToastEvent("Entry edited"));
-			retrieveMonths();
-		});
-	}
 	// New
-	else {
+	if (entry && !entryId) {
 		this.getEventHandler().handle(new ToastEvent("Adding Entry"));
 		this.getBudgetHandler().getEntryDao().add(entry, budgetId, function(single, list) {
 			context.getEventHandler().handle(new ToastEvent("Entry added"));
 			retrieveMonths();
+			if (callback)
+				callback(cardDeleted);
+		});
+	}
+	// Edit
+	else if (entry && entryId) {
+		this.getEventHandler().handle(new ToastEvent("Editing Entry"));
+		this.getBudgetHandler().getEntryDao().edit(entryId, entry, function(single, list) {
+			context.getEventHandler().handle(new ToastEvent("Entry edited"));
+			retrieveMonths();
+			if (callback)
+				callback(cardDeleted);
+		});
+	}
+	// Delete
+	else if (!entry && entryId) {
+		console.log("Delete entry", entryId);
+		this.getEventHandler().handle(new ToastEvent("Deleting Entry"));
+		this.getBudgetHandler().getEntryDao().remove(entryId, function(entryDeleted) {
+			context.getEventHandler().handle(new ToastEvent("Entry deleted"));
+			if (callback)
+				callback(entryDeleted);
 		});
 	}
 };
@@ -306,7 +314,7 @@ BudgetMainController.prototype.handleCardSave = function(card, cardId, callback)
 BudgetMainController.prototype.handleTypeSave = function(type, typeId, callback) {
 	var context = this;
 	var budgetId = this.getBudgetHandler().getBudgetId();
-	
+
 	// New
 	if (type && !typeId) {
 		this.getBudgetHandler().getTypeDao().add(type, budgetId, function(typeAdded) {
@@ -335,7 +343,7 @@ BudgetMainController.prototype.handleTypeSave = function(type, typeId, callback)
 
 BudgetMainController.prototype.handleBudgetSave = function(budget, budgetId, callback) {
 	var context = this;
-	
+
 	// New
 	if (budget && !budgetId) {
 		this.getBudgetHandler().getBudgetDao().add(budget, null, function(budgetAdded) {
@@ -365,7 +373,7 @@ BudgetMainController.prototype.handleBudgetSave = function(budget, budgetId, cal
 BudgetMainController.prototype.handleBudgetUserSave = function(budgetUser, budgetUserObject, callback) {
 	var context = this;
 	var budgetId = this.getBudgetHandler().getBudgetId();
-	
+
 	// New
 	if (budgetUser && !budgetUserObject) {
 		this.getBudgetHandler().getBudgetDao().addUser(budgetId, budgetUser.email, function(budgetUserAdded) {

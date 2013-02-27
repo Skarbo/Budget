@@ -80,6 +80,10 @@ EntryOverlayPresenterView.prototype.getCommentButtonElement = function() {
 	return this.getCommentElement().find(".entry_save_button");
 };
 
+EntryOverlayPresenterView.prototype.getDeleteButtonElement = function() {
+	return this.getHeaderElement().find(".overlay_header_buttons_container .entry_delete");
+};
+
 // ... ... /ELEMENT
 
 // ... /GET
@@ -108,6 +112,70 @@ EntryOverlayPresenterView.prototype.doBindEventHandler = function() {
 
 };
 
+EntryOverlayPresenterView.prototype.doShow = function(entryId) {
+	OverlayPresenterView.prototype.doShow.call(this);
+	var context = this;
+	this.entryId = entryId || null;
+	this.mode = !this.entryId ? "new" : "edit";
+
+	// Tabs
+	this.getTabsElement().tabs({
+		selectCallback : function(tab) {
+			switch (tab) {
+			case "comment":
+				context.getCommentTextareaElement().focus();
+				break;
+			}
+		}
+	});
+	// this.getTabsElement().tabs("tab", "card");
+	this.getTabsElement().tabs("first");
+
+	// Header
+	if (this.mode == "new") {
+		this.getHeaderElement().find(".overlay_header_title .new").removeClass("hide");
+		this.getHeaderElement().find(".overlay_header_title .edit").addClass("hide");
+	} else {
+		this.getHeaderElement().find(".overlay_header_title .new").addClass("hide");
+		this.getHeaderElement().find(".overlay_header_title .edit").removeClass("hide");
+	}
+
+	// Buttons
+	if (this.mode == "new") {
+		this.getDeleteButtonElement().addClass("hide").next().filter(".spacer").addClass("hide");
+	} else {
+		// Delete button
+		this.getDeleteButtonElement().removeClass("hide").next().filter(".spacer").removeClass("hide");
+		this.getDeleteButtonElement().unbind(".entry_overlay").bind("touchclick.entry_overlay", function(event) {
+			if (!context.entryId)
+				return console.warn("Can't delete entry, entry id not given");
+			context.getEventHandler().handle(new DialogEvent("Delete Entry?", function() {
+				console.log("Delete entry dialog OK");
+				context.getEventHandler().handle(new SaveEvent("entry", null, context.entryId));
+				context.doClose();
+			}));
+		});
+	}
+
+	// Edit
+	if (this.mode == "edit") {
+		this.getView().getBudgetHandler().getEntryDao().get(entryId, function(entry) {
+			context.drawEntry(entry);
+		});
+	}
+	// New
+	else {
+		this.drawEntry(null);
+	}
+
+};
+
+EntryOverlayPresenterView.prototype.doClose = function() {
+	OverlayPresenterView.prototype.doClose.call(this);
+
+	this.getDeleteButtonElement().unbind(".entry_overlay");
+};
+
 // ... /DO
 
 // ... HANDLE
@@ -132,7 +200,7 @@ EntryOverlayPresenterView.prototype.handleEntrySave = function() {
 	if (illegal != "")
 		this.getEventHandler().handle(new ToastEvent(illegal, ToastEvent.LENGTH_LONG));
 	else {
-		this.getEventHandler().handle(new SaveEntryBudgetEvent(entry, this.mode == "edit" ? this.entryId : null));
+		this.getEventHandler().handle(new SaveEvent(entry, this.mode == "edit" ? this.entryId : null));
 		this.entryLast = entry;
 	}
 
@@ -150,58 +218,6 @@ EntryOverlayPresenterView.prototype.handleOk = function() {
 };
 
 // ... /HANDLE
-
-// ... DO
-
-EntryOverlayPresenterView.prototype.doShow = function(entryId) {
-	OverlayPresenterView.prototype.doShow.call(this);
-	var context = this;
-	this.entryId = entryId || null;
-	this.mode = !this.entryId ? "new" : "edit";
-
-	// Tabs
-	this.getTabsElement().tabs({
-		selectCallback : function(tab) {
-			switch (tab) {
-			case "comment":
-				context.getCommentTextareaElement().focus();
-				break;
-			}
-		}
-	});
-	//this.getTabsElement().tabs("tab", "card");
-	this.getTabsElement().tabs("first");
-
-	// Header
-	if (this.mode == "new") {
-		this.getHeaderElement().find(".overlay_header_title .new").removeClass("hide");
-		this.getHeaderElement().find(".overlay_header_title .edit").addClass("hide");
-	} else {
-		this.getHeaderElement().find(".overlay_header_title .new").addClass("hide");
-		this.getHeaderElement().find(".overlay_header_title .edit").removeClass("hide");
-	}
-
-	// Buttons
-	if (this.mode == "new") {
-		this.getHeaderElement().find(".overlay_header_buttons_container .overlay_delete").addClass("hide").next().filter(".spacer").addClass("hide");
-	} else {
-		this.getHeaderElement().find(".overlay_header_buttons_container .overlay_delete").removeClass("hide").next().filter(".spacer").removeClass("hide");
-	}
-
-	// Edit
-	if (this.mode == "edit") {
-		this.getView().getBudgetHandler().getEntryDao().get(entryId, function(entry) {
-			context.drawEntry(entry);
-		});
-	}
-	// New
-	else {
-		this.drawEntry(null);
-	}
-
-};
-
-// ... /DO
 
 EntryOverlayPresenterView.prototype.drawEntry = function(entry) {
 	var context = this;
@@ -236,8 +252,8 @@ EntryOverlayPresenterView.prototype.drawEntry = function(entry) {
 	// CARD
 
 	var cards = this.getView().getBudgetHandler().getCards().getArray();
-	cards.sort(function(left, right){
-		if(left.title == right.title){
+	cards.sort(function(left, right) {
+		if (left.title == right.title) {
 			return 0;
 		}
 		return (left.title < right.title) ? -1 : 1;
@@ -266,8 +282,8 @@ EntryOverlayPresenterView.prototype.drawEntry = function(entry) {
 	// TYPE
 
 	var types = this.getView().getBudgetHandler().getTypes().getArray();
-	types.sort(function(left, right){
-		if(left.title == right.title){
+	types.sort(function(left, right) {
+		if (left.title == right.title) {
 			return 0;
 		}
 		return (left.title < right.title) ? -1 : 1;
