@@ -95,7 +95,7 @@ ActionbarPresenterView.prototype.doBindEventHandler = function() {
 	});
 
 	// Buttons
-	this.getButtonsElement().unbind(".actionbar").on("touchclick.actionbar", function(event) {
+	this.getButtonsElement().unbind(".actionbar").bind("touchclick.actionbar", function(event) {
 		var button = $(event.target);
 		var buttonIndex = button.attr("data-index");
 		var disabled = button.is("[data-disabled]");
