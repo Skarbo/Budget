@@ -200,7 +200,7 @@ EntryOverlayPresenterView.prototype.handleEntrySave = function() {
 	if (illegal != "")
 		this.getEventHandler().handle(new ToastEvent(illegal, ToastEvent.LENGTH_LONG));
 	else {
-		this.getEventHandler().handle(new SaveEvent(entry, this.mode == "edit" ? this.entryId : null));
+		this.getEventHandler().handle(new SaveEvent("entry", entry, this.mode == "edit" ? this.entryId : null));
 		this.entryLast = entry;
 	}
 
