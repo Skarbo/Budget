@@ -170,8 +170,8 @@ EntryOverlayPresenterView.prototype.doShow = function(entryId) {
 
 };
 
-EntryOverlayPresenterView.prototype.doClose = function() {
-	OverlayPresenterView.prototype.doClose.call(this);
+EntryOverlayPresenterView.prototype.doClose = function(isOk) {
+	OverlayPresenterView.prototype.doClose.call(this, isOk);
 
 	this.getDeleteButtonElement().unbind(".entry_overlay");
 };
