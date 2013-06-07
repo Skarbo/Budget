@@ -262,11 +262,7 @@ EntryOverlayPresenterView.prototype.drawEntry = function(entry) {
 	for ( var i in cards)
 		cardsOptions.push({
 			value : cards[i].id,
-			text : $("<span />", {
-				text : cards[i].title
-			}).after($("<span />", {
-				text : cards[i].number
-			}))
+			text : Core.sprintf("<span>%s</span><span>%s</span>", cards[i].title, cards[i].number)			
 		});
 
 	this.getCardSelectElement().select({

@@ -1,4 +1,4 @@
--- Wed, 27 Feb 2013 18:04:04 GMT
+-- Wed, 27 Feb 2013 22:45:30 GMT
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 -- Dumping database structure for budget_test
@@ -128,11 +128,10 @@ CREATE TABLE `budget_entry` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
--- Dumping data for table budget_test.budget_entry: ~2 rows (approximately)
+-- Dumping data for table budget_test.budget_entry: ~1 rows (approximately)
 /*!40000 ALTER TABLE `budget_entry` DISABLE KEYS */;
 INSERT INTO `budget_entry` (`entry_id`, `budget_id`, `entry_cost`, `entry_comment`, `entry_credit`, `entry_date`, `entry_single`, `entry_type`, `entry_card`, `entry_updated`, `entry_registered`) VALUES 
-	(1, 789, 456, 'New comment4', 0, '2013-01-04', 0, 1, 1, '2013-01-19 10:27:35', '2013-01-19 10:05:54'),
-	(5, 789, 78, '', 0, '2013-01-17', 0, 1, 3, '2013-01-19 11:11:21', '2013-01-19 11:10:52')
+	(1, 789, 456, 'New comment4', 0, '2013-01-04', 0, 1, 1, '2013-01-19 10:27:35', '2013-01-19 10:05:54')
 ;
 /*!40000 ALTER TABLE `budget_entry` ENABLE KEYS */;
 
@@ -207,7 +206,7 @@ CREATE TABLE `budget_user` (
 -- Dumping data for table budget_test.budget_user: ~1 rows (approximately)
 /*!40000 ALTER TABLE `budget_user` DISABLE KEYS */;
 INSERT INTO `budget_user` (`user_id`, `user_name`, `user_email`, `user_loggedin`, `user_updated`, `user_registered`) VALUES 
-	(656, 'Demo', 'demo@email.com', '2013-01-19 11:11:26', NULL, '2013-01-18 23:45:47')
+	(656, 'Demo', 'demo@email.com', '2013-02-27 19:43:45', NULL, '2013-01-18 23:45:47')
 ;
 /*!40000 ALTER TABLE `budget_user` ENABLE KEYS */;
 
@@ -228,7 +227,7 @@ CREATE TABLE `budget_user_auth` (
 -- Dumping data for table budget_test.budget_user_auth: ~1 rows (approximately)
 /*!40000 ALTER TABLE `budget_user_auth` DISABLE KEYS */;
 INSERT INTO `budget_user_auth` (`user_id`, `user_auth_id`, `user_auth_type`, `user_auth_loggedin`, `user_auth_registered`) VALUES 
-	(656, 'demo', 'demo', '2013-01-19 11:11:26', '2013-01-18 23:45:47')
+	(656, 'demo', 'demo', '2013-02-27 19:34:21', '2013-01-18 23:45:47')
 ;
 /*!40000 ALTER TABLE `budget_user_auth` ENABLE KEYS */;
 
