@@ -174,3 +174,5 @@ dbbackup/localhost/budget_prod.sql
 src/api/budget/password_budget_api.php
 
 log.log
+
+dbbackup/_backupinfo.txt
