@@ -11,9 +11,9 @@ The application is used for keeping a budget for my household.
 
 [KrisSkarbo.com/Budget](http://krisskarbo.com/budget) - Sign in with demo
 
-The application is aimed for mobile devices, but does not work 100% for all.
-
-Logging in with Google or Facebook creates a new budget for that account, and the application will store the user's name and email. 
+* The application is aimed for mobile devices, but does not work 100% for all.
+* Long click a month to view that month
+* Logging in with Google or Facebook creates a new budget for that account, and the application will store the user's name and email. 
 
 ### New Entry
 
