@@ -161,6 +161,7 @@ OverviewMonthPresenterView.prototype.doBindEventHandler = function() {
 	// BINDS
 
 	this.getOverviewElement().unbind(".overview").bind("touchclick.overview", function(event) {
+		event.preventDefault();
 		var typeRow = $(event.target).closest("tr.type_row:NOT([data-sum])");
 
 		if (typeRow.length > 0) {

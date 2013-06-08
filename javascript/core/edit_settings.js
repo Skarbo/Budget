@@ -16,6 +16,7 @@
 				$this.children().filter(".setting_wrapper.edit:NOT(.template)").remove();
 
 				$this.unbind(".editSettings").bind("touchclick.editSettings", function(event) {
+					event.preventDefault();
 					var target = $(event.target);
 					var settingElement = target.closest(".setting_wrapper");
 

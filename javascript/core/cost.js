@@ -27,6 +27,7 @@
 
 				// Number wrapper
 				numberWrapperElement.unbind(".cost").bind("touchclick.cost", function(event){
+					event.preventDefault();
 					if (!$(event.target).is(costInputElement))
 						costInputElement.focus();
 				});

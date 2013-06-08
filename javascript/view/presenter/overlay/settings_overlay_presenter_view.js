@@ -149,6 +149,7 @@ SettingsOverlayPresenterView.prototype.doBindEventHandler = function() {
 	// BUDGETS SETTINGS
 
 	this.getBudgetsSettingsEditsElement().unbind(".budgets_settings").bind("touchclick.budgets_settings", function(event) {
+		event.preventDefault();
 		var target = $(event.target);
 		var budgetRow = target.closest(".budgets_budget_row");
 		var isEdit = budgetRow.is(".edit");
@@ -177,6 +178,7 @@ SettingsOverlayPresenterView.prototype.doBindEventHandler = function() {
 	});
 
 	this.getBudgetsSettingsUsersWrapperElement().unbind(".budgets_settings").bind("touchclick.budgets_settings", function(event) {
+		event.preventDefault();
 		var target = $(event.target);
 		var isAdd = target.is(".budgets_user_add");
 		var isDelete = target.is(".budgets_user_delete");

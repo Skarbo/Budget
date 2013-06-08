@@ -271,7 +271,6 @@ BudgetMainController.prototype.handleEntrySave = function(entry, entryId, callba
 	}
 	// Delete
 	else if (!entry && entryId) {
-		console.log("Delete entry", entryId);
 		this.getEventHandler().handle(new ToastEvent("Deleting Entry"));
 		this.getBudgetHandler().getEntryDao().remove(entryId, function(entryDeleted) {
 			context.getEventHandler().handle(new ToastEvent("Entry deleted"));

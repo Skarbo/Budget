@@ -69,6 +69,7 @@ ActionbarPresenterView.prototype.doBindEventHandler = function() {
 
 	// View control
 	this.getViewControlElement().unbind(".actionbar").bind("touchclick.actionbar", function(event) {
+		event.preventDefault();
 		if ($(this).attr("data-menu") == "true") {
 			var position = $(this).position();
 			context.getViewControlMenuElement().toggle().css("margin-left", Core.sprintf("%dpx", position.left));
@@ -77,13 +78,14 @@ ActionbarPresenterView.prototype.doBindEventHandler = function() {
 					$("html").one("touchclick", function(event) {
 						context.getViewControlMenuElement().hide();
 					});
-				}, 10);
+				}, 100);
 			}
 		}
 	});
 
 	// View control menu
 	this.getViewControlMenuElement().unbind(".actionbar").bind("touchclick.actionbar", function(event) {
+		event.preventDefault();
 		var target = $(event.target);
 		var menuWrapper = target.closest("[data-index]");
 		if (menuWrapper.length > 0) {
@@ -96,6 +98,7 @@ ActionbarPresenterView.prototype.doBindEventHandler = function() {
 
 	// Buttons
 	this.getButtonsElement().unbind(".actionbar").bind("touchclick.actionbar", function(event) {
+		event.preventDefault();
 		var button = $(event.target);
 		var buttonIndex = button.attr("data-index");
 		var disabled = button.is("[data-disabled]");

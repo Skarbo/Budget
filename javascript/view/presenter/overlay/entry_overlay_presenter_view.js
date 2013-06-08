@@ -147,10 +147,10 @@ EntryOverlayPresenterView.prototype.doShow = function(entryId) {
 		// Delete button
 		this.getDeleteButtonElement().removeClass("hide").next().filter(".spacer").removeClass("hide");
 		this.getDeleteButtonElement().unbind(".entry_overlay").bind("touchclick.entry_overlay", function(event) {
+			event.preventDefault();
 			if (!context.entryId)
 				return console.warn("Can't delete entry, entry id not given");
 			context.getEventHandler().handle(new DialogEvent("Delete Entry?", function() {
-				console.log("Delete entry dialog OK");
 				context.getEventHandler().handle(new SaveEvent("entry", null, context.entryId));
 				context.doClose();
 			}));
@@ -185,20 +185,21 @@ EntryOverlayPresenterView.prototype.handleEntrySave = function() {
 	var entry = entryForm.serializeJSON();
 	var entryRequired = [ "date", "card", "type", "cost" ];
 	var illegal = "";
-
+	
 	for ( var i in entryRequired) {
-		if (entry[entryRequired[i]] == "")
+		if (!entry[entryRequired[i]])
 			illegal = "Entry \"" + entryRequired[i] + "\" not given";
 	}
 
 	if (!illegal && entry.type == "_new" && entry.type_title == "")
-		illegal = entry.type_title == "" ? "Empty new type title" : "";
+		illegal = "Empty new type title";
 
 	if (!illegal && entry.card == "_new" && entry.card_title == "")
-		illegal = entry.card_title == "" ? "Empty new card title" : "";
+		illegal = "Empty new card title";
 
-	if (illegal != "")
-		this.getEventHandler().handle(new ToastEvent(illegal, ToastEvent.LENGTH_LONG));
+	if (illegal != "") {
+		this.getEventHandler().handle(new ToastEvent(illegal, ToastEvent.LENGTH_LONG));		
+	}
 	else {
 		this.getEventHandler().handle(new SaveEvent("entry", entry, this.mode == "edit" ? this.entryId : null));
 		this.entryLast = entry;
@@ -314,6 +315,7 @@ EntryOverlayPresenterView.prototype.drawEntry = function(entry) {
 	// COMMENT
 
 	this.getCommentButtonElement().unbind(".comment").bind("touchclick.comment", function(event) {
+		event.preventDefault();
 		context.doClose(true);
 	});
 

@@ -31,6 +31,7 @@
 				calendar.find(".calendar .calendar_weeks_wrapper").unbind(".calendar").bind("touchclick.calendar", {
 					calendar : calendar
 				}, function(event) {
+					event.preventDefault();
 					var calendarDate = $(event.target).attr("data-calendar-date");
 					if (calendarDate) {
 						event.data.calendar.calendar("select", new Date(Date.parse(calendarDate)));
@@ -39,6 +40,7 @@
 				calendar.find(".calendar_month_prev, .calendar_month_next").unbind(".calendar").bind("touchclick.calendar", {
 					calendar : calendar
 				}, function(event) {
+					event.preventDefault();
 					event.data.calendar.calendar("month", $(event.target).hasClass("calendar_month_prev") ? "prev" : "next");
 				}).touchActive();
 				calendar.find(".calendar_day").touchActive();

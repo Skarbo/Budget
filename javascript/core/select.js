@@ -22,6 +22,7 @@
 				element.unbind(".select").bind("touchclick.select", {
 					select : element
 				}, function(event) {
+					event.preventDefault();
 					var selectValue = $(event.target).closest(".select_select").find(".select_radio input[type=radio]");
 					event.data.select.select("select", selectValue.val(), true);
 				});
@@ -30,6 +31,7 @@
 
 				element.find(".select_new .select_for input[type=text]").val("").unbind(".select").bind("touchclick.select", function(event) {
 					event.stopPropagation();
+					event.preventDefault();
 				}).bind("keyup.select", {
 					select : element
 				}, function(event) {

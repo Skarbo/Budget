@@ -359,7 +359,6 @@ MonthPageMainView.prototype.drawChart = function() {
 	for ( var day in this.month.total) {
 		dataArray.push([ day, Core.roundNumber(parseFloat(this.month.total[day])) ]);
 	}
-	console.log("Data array", this.month, dataArray);
 	// var data = google.visualization.arrayToDataTable([ [ 'Day', 'January',
 	// 'Februrary', 'March', 'April', 'May' ], [ '1', 165, 938, 522, 998, 450 ],
 	// [ '5', 135, 1120, 599, 1268, 288 ], [ '10', 157, 1167, 587, 807, 397 ], [

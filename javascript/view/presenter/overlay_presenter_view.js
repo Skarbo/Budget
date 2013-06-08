@@ -99,18 +99,20 @@ OverlayPresenterView.prototype.doShow = function() {
 		this.getView().getController().updateHash(this.getHash());
 
 	// Ok button
-	this.getRoot().find(".overlay_ok").unbind(".overlay").bind("touchclick.overlay", function() {
+	this.getRoot().find(".overlay_ok").unbind(".overlay").bind("touchclick.overlay", function(event) {
+		event.preventDefault();
 		okHandle();
 	});
 
 	// Cancel button
-	this.getRoot().find(".overlay_cancel").unbind(".overlay").bind("touchclick.overlay", function() {
+	this.getRoot().find(".overlay_cancel").unbind(".overlay").bind("touchclick.overlay", function(event) {
+		event.preventDefault();
 		cancelHandle();
 	});
 
 	// Bind close
 	if (this.isBindClose) {
-		setTimeout(function() {
+		setTimeout(function(event) {
 			$("html").bind("touchclick.overlay", function(event) {
 				if ($(event.target).closest(".overlay").length == 0) {
 					cancelHandle();
@@ -122,35 +124,41 @@ OverlayPresenterView.prototype.doShow = function() {
 					return false;
 				}
 			});
-		}, 10);
+		}, 100);
 	}
 
 	// Fill height
 	if (!this.getRoot().is("[data-background=false]")) {
 		this.getRoot().fillHeight();
 	}
-	
+
 };
 
 OverlayPresenterView.prototype.doClose = function(isOk) {
-	// Hide overlay
-	this.getRoot().addClass("hide");
+	var context = this;
+	var close = function() {
+		// Hide overlay
+		context.getRoot().addClass("hide");
 
-	// Remove hash
-	if (this.isHash) {
-		var removeHash = Core.objectEmpty(this.getHash());
-		this.getView().getController().updateHash(removeHash);
-	}
+		// Remove hash
+		if (context.isHash) {
+			var removeHash = Core.objectEmpty(context.getHash());
+			context.getView().getController().updateHash(removeHash);
+		}
 
-	// Unbind
-	if (this.isBindClose)
-		$("html").unbind('.overlay');
+		// Unbind
+		if (context.isBindClose)
+			$("html").unbind('.overlay');
+	};
 
 	// Handle ok/cancel
-	if (isOk)
-		this.handleOk();
-	else
+	if (isOk) {
+		if (this.handleOk())
+			close();
+	} else {
 		this.handleCancel();
+		close();
+	}
 };
 
 // ... /DO

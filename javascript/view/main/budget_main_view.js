@@ -334,10 +334,12 @@ BudgetMainView.prototype.draw = function(controller) {
 	// DIALOG
 
 	this.getDialogOverlay().draw(this.getOverlayElement(this.getDialogOverlay().getId()));
-	this.getDialogOverlay().getRoot().find(".dialog_cancel").unbind(".dialog").bind("touchclick.dialog", function() {
+	this.getDialogOverlay().getRoot().find(".dialog_cancel").unbind(".dialog").bind("touchclick.dialog", function(event) {
+		event.preventDefault();
 		context.getDialogOverlay().doClose();
 	});
-	this.getDialogOverlay().getRoot().find(".dialog_ok").unbind(".dialog").bind("touchclick.dialog", function() {
+	this.getDialogOverlay().getRoot().find(".dialog_ok").unbind(".dialog").bind("touchclick.dialog", function(event) {
+		event.preventDefault();
 		context.getDialogOverlay().doClose(true);
 	});
 	this.getDialogOverlay().getRoot().find(".dialog_cancel,.dialog_ok").touchActive();

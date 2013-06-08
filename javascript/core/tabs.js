@@ -23,6 +23,7 @@
 				container.unbind(".tabs").bind("touchclick.tabs", {
 					"tabs" : target
 				}, function(event) {
+					event.preventDefault();
 					var tab = $(event.target).closest("[data-tab]").attr("data-tab");
 					event.data.tabs.tabs("tab", tab, true);
 				});

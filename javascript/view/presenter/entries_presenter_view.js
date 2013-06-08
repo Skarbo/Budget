@@ -112,7 +112,6 @@ EntriesPresenterView.prototype.getMonthBetweenElement = function(monthId) {
 			elementMonthId = monthIdTemp;
 		}
 	});
-	console.log("Month between element", monthId, element);
 	return element;
 };
 
