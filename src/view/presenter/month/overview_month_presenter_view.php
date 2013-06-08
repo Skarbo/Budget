@@ -42,7 +42,7 @@ class OverviewMonthPresenterView extends AbstractPresenterView
         $typeRow->addContent( Xhtml::td( "Sum" )->class_( "sum" ) );
 
         $entryRow->addContent( Xhtml::td( "Date" )->class_( "date" ) );
-        $entryRow->addContent( Xhtml::td( "Cost" )->class_( "cost" ) );
+        $entryRow->addContent( Xhtml::td( Xhtml::span( "Comment" )->class_("comment") )->addContent( Xhtml::span( "Cost" )->class_("cost") )->class_( "comment_cost" ) );
         $entryRow->addContent( Xhtml::td( "Single" )->class_( "single" ) );
         $entryRow->addContent( Xhtml::td( "Sum" )->class_( "cost_sum" ) );
 

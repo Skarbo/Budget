@@ -167,8 +167,19 @@
 	display: none;
 }
 
+/*
 .entries_wrapper table.entries tbody.month_entries>tr.entry.selected>td.type_card_comment td.card span
 	{
+	display: inline;
+	font-size: 0.8em;
+	margin-right: 0.5em;
+	color: inherit;
+	color: #424345;
+	opacity: 0.7;
+}*/
+.entries_wrapper table.entries tbody.month_entries>tr.entry.selected>td.type_card_comment td.card:BEFORE
+	{
+	content: attr(data-modified);
 	display: inline;
 	font-size: 0.8em;
 	margin-right: 0.5em;

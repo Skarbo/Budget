@@ -240,7 +240,8 @@ OverviewMonthPresenterView.prototype.doShowEntries = function(typeRow) {
 			entryRow.attr("data-date", entry.date);
 			entryRow.attr("data-positive", entry.credit == 1 ? "true" : null);
 			entryRow.find(".date").text(entryDate.format("dd"));
-			entryRow.find(".cost").text(entry.cost.toFixed(2));
+			entryRow.find(".comment_cost .comment").text(entry.comment || "");
+			entryRow.find(".comment_cost .cost").text(entry.cost.toFixed(2));
 			entryRow.find(".single").text(divide);
 			entryRow.find(".cost_sum").text(costSum.toFixed(2));
 

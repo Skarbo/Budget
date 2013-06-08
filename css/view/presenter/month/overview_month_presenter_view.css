@@ -1,210 +1,266 @@
 /* Overview */
 #overview_month_wrapper {
-
+	
 }
 
 #overview_month_wrapper #overview_wrapper {
-
+	
 }
 
 /* ... Table */
 #overview_month_wrapper .overview_wrapper table.overview_table {
-    width: 100%;
+	width: 100%;
 }
 
 #overview_month_wrapper .overview_wrapper table.overview_table  td {
-    vertical-align: middle;
-    padding: 0.2em 0.5em;
-    white-space: nowrap;
+	vertical-align: middle;
+	padding: 0.2em 0.5em;
+	white-space: nowrap;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper {
-
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper
+	{
+	
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper.template {
-    display: none;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper.template
+	{
+	display: none;
 }
 
 /* ... ... Card */
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row {
-    background-color: #CFE2F3;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row
+	{
+	background-color: #CFE2F3;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row > td {
-    border-top: 2px solid #666666;
-    line-height: 2em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row>td
+	{
+	border-top: 2px solid #666666;
+	line-height: 2em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row td.card {
-    font-weight: bold;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.card_row td.card
+	{
+	font-weight: bold;
 }
 
 /* ... ... /Card */
 
 /* ... ... Type */
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row {
-
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row
+	{
+	
 }
 
-#overview_month_wrapper.overview_wrapper table.overview_table tbody.card_wrapper tr.type_row.touching:NOT(
-[data-sum]) {
-    background-color: #DEDEDE;
+#overview_month_wrapper.overview_wrapper table.overview_table tbody.card_wrapper tr.type_row.touching:NOT([data-sum]) {
+	background-color: #DEDEDE;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-sum="true"] > td {
-    border-top: 1px solid #666666;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-sum="true"]>td
+	{
+	border-top: 1px solid #666666;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row:nth-child(odd) {
-    background-color: #EFEFEF;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row:nth-child(odd)
+	{
+	background-color: #EFEFEF;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row.selected {
-    background-color: #E5EBFF;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row.selected
+	{
+	background-color: #E5EBFF;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-card], #overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-type] {
-    cursor: pointer;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-card],#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-type]
+	{
+	cursor: pointer;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row > td {
-    border-top: 1px solid #CCC;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row>td
+	{
+	border-top: 1px solid #CCC;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.type {
-    padding-left: 1em;
-    width: 1px;
-    text-align: right;
-    width: 1px;
-    font-size: 0.8em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.type
+	{
+	padding-left: 1em;
+	width: 1px;
+	text-align: right;
+	width: 1px;
+	font-size: 0.8em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday {
-    text-align: right;
-    font-size: 0.8em;
-    color: #7A7B7C;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday
+	{
+	text-align: right;	
+	font-size: 0.8em;
+	color: #7A7B7C;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday[data-positive="true"] {
-    color: #4C944C;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday[data-positive="true"]
+	{
+	color: #4C944C;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday:BEFORE {
-    content: "kr";
-    margin-right: 0.2em;
-    font-size: 0.8em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.prday:BEFORE
+	{
+	content: "kr";
+	margin-right: 0.2em;
+	font-size: 0.8em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count {
-    width: 1px;
-    text-align: right;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count
+	{
+	width: 1px;
+	text-align: right;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count .entries_wrapper {
-    background-color: transparent;
-    border: 2px solid #98BAF1;
-    border-radius: 10px;
-    display: inline-table;
-    height: 15px;
-    position: relative;
-    text-align: center;
-    vertical-align: middle;
-    width: 15px;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count .entries_wrapper
+	{
+	background-color: transparent;
+	border: 2px solid #98BAF1;
+	border-radius: 10px;
+	display: inline-table;
+	height: 15px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 15px;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count .entries_wrapper .entries {
-    display: table-cell;
-    font-size: 0.6em;
-    height: 100%;
-    text-align: center;
-    vertical-align: middle;
-    width: 100%;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.entries_count .entries_wrapper .entries
+	{
+	display: table-cell;
+	font-size: 0.6em;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum {
-    width: 1px;
-    text-align: right;
-    font-weight: bold;
-    font-size: 1.2em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum
+	{
+	width: 1px;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-sum="true"] td.sum {
-    font-size: 1.4em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row[data-sum="true"] td.sum
+	{
+	font-size: 1.4em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum[data-positive="true"] {
-    color: #006600;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum[data-positive="true"]
+	{
+	color: #006600;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum:BEFORE {
-    content: "kr";
-    font-size: 0.6em;
-    font-weight: normal;
-    margin-right: 0.2em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row td.sum:BEFORE
+	{
+	content: "kr";
+	font-size: 0.6em;
+	font-weight: normal;
+	margin-right: 0.2em;
 }
 
 /* ... ... /Type */
 
 /* ... ... Entry */
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row {
-
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row
+	{
+	
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td {
-    color: #7A7B7C;
-    font-size: 0.8em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td
+	{
+	color: #7A7B7C;
+	font-size: 0.8em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row + tr.entry_row td {
-    border-top: 1px solid #DDD;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.type_row+tr.entry_row td
+	{
+	border-top: 1px solid #DDD;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.date {
-    text-align: right;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.date
+	{
+	text-align: right;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.date:AFTER {
-    content: ".";
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.date:AFTER
+	{
+	content: ".";
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost {
-    text-align: right;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.comment_cost
+	{
+		
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row[data-positive="true"] td.cost {
-    color: #4C944C;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.comment_cost .comment
+	{
+	display: inline-block;
+	width: 70%;
+	text-align: left;
+	overflow: hidden;
+	vertical-align: middle;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost:BEFORE {
-    content: "kr";
-    margin-right: 0.2em;
-    font-size: 0.8em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.comment_cost .cost
+	{
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+	vertical-align: middle;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.single {
-    text-align: center;
-    font-size: 0.6em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.comment_cost .cost:BEFORE
+	{
+	text-align: left;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.single:BEFORE {
-    content: "/";
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row[data-positive="true"] td.comment_cost .cost
+	{
+	color: #4C944C;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost_sum {
-    text-align: right;
-    font-weight: bold;
-    padding-right: 0.8em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.comment_cost .cost:BEFORE
+	{
+	content: "kr";
+	margin-right: 0.2em;
+	font-size: 0.8em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row[data-positive="true"] td.cost_sum {
-    color: #4C944C;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.single
+	{
+	text-align: center;
+	font-size: 0.6em;
 }
 
-#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost_sum:BEFORE {
-    content: "kr";
-    font-size: 0.8em;
-    margin-right: 0.2em;
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.single:BEFORE
+	{
+	content: "/";
+}
+
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost_sum
+	{
+	text-align: right;
+	font-weight: bold;
+	padding-right: 0.8em;
+}
+
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row[data-positive="true"] td.cost_sum
+	{
+	color: #4C944C;
+}
+
+#overview_month_wrapper .overview_wrapper table.overview_table tbody.card_wrapper tr.entry_row td.cost_sum:BEFORE
+	{
+	content: "kr";
+	font-size: 0.8em;
+	margin-right: 0.2em;
 }
 
 /* ... ... /Entry */

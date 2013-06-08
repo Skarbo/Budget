@@ -123,10 +123,12 @@ abstract class MainController extends AbstractMainController implements Interfac
 
         // Javascript code
         $code = <<<EOD
+var controller;
+var view;
 var eventHandler = new EventHandler();
 $(document).ready(function() {
-	var view = new %s('%s');
-  	var controller = new %s(eventHandler, %d, %s);
+	view = new %s('%s');
+  	controller = new %s(eventHandler, %d, %s);
   	controller.render(view);
 } );
 EOD;

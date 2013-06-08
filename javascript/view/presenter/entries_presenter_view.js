@@ -503,11 +503,12 @@ EntriesPresenterView.prototype.addEntry = function(entryElement, entryId, entry)
 
 	entryElement.find("td.date").text(entryDate.format("dd"));
 	entryElement.find("td.type").text(type.title);
-	entryElement.find("td.card").html($("<span />", {
-		text : entryLastModified.format("HH:MM dd. mmm yy")
-	}).after(card.title)).attr("title", card.number);
+//	entryElement.find("td.card").html($("<span />", {
+//		text : entryLastModified.format("HH:MM dd. mmm yy")
+//	}).after(card.title)).attr("title", card.number);
+	entryElement.find("td.card").text(card.title).attr("data-modified", entryLastModified.format("HH:MM dd. mmm yy")).attr("title", card.number);
 	entryElement.find("td.cost").text(entry.cost.toFixed(2));
-	entryElement.find("td.comment").text(entry.comment).removeClass("hide");
+	entryElement.find("td.comment").text(entry.comment).parent().removeClass("hide");
 	if (!entry.comment)
 		entryElement.find("td.comment").parent().addClass("hide");
 };
