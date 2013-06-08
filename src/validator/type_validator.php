@@ -30,7 +30,7 @@ class TypeValidator extends Validator
     protected function doTitle()
     {
         $this->validateRegex( "Type title", self::$REGEX_TITLE, Core::utf8Decode( $this->getModel()->getTitle() ) );
-        $this->validateLength( "Type title", Core::utf8Decode( $this->getModel()->getTitle() ), 3 );
+        $this->validateLength( "Type title", Core::utf8Decode( $this->getModel()->getTitle() ), 2 );
     }
 
     // /FUNCTIONS
